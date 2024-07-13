@@ -4,6 +4,7 @@ LEMP SERVER
 In this project, you will implement a similar stack, but with an alternative Web Server – NGINX, which is also very popular and widely used by many websites on the Internet
  
 - create a new EC2 Instance of t2.nano family with Ubuntu Server 22.04 LTS (HVM) image.
+[screenshot 1](./image2/1%20shot.png)
 
 ### step 1: INSTALLING THE NGINX WEB SERVER
 
@@ -22,6 +23,7 @@ Before we can receive any traffic by our Web Server, we need to open TCP port 80
 As we know, we have TCP port 22 open by default on our EC2 machine to access it via SSH, so we need to add a rule to EC2 configuration to open inbound connection through port 80:
 
 Our server is running and we can access it locally and from the Internet (Source 0.0.0.0/0 means ‘from any IP address’).
+[localhost](./image2/local%20host.png)
 
 First, let us try to check how we can access it locally in our Ubuntu shell, run:
 `curl http://localhost:80`
@@ -38,6 +40,8 @@ Now that you have a web server up and running, you need to install a Database Ma
 
 - Again, use ‘apt’ to acquire and install this software:
  `sudo apt install mysql-server -y`
+
+ [my sql](./image2/sql%20instal.png)
 
  When the installation is finished, log in to the MySQL console by typing:
  `sudo mysql`
@@ -164,7 +168,8 @@ Copy this content into your todo_list.php script:
 Save and close the file when you are done editing
 
 You can now access this page in your web browser by visiting the domain name or public IP address configured for your website, followed by /todo_list.php:
-http://<Public_domain_or_IP>/todo_list.php
+`http://<Public_domain_or_IP>/todo_list.php`
+
 You should see a page like this, showing the content you’ve inserted in your test table:
 
 That means your PHP environment is ready to connect and interact with your MySQL server
